@@ -43,5 +43,5 @@ and a separate checkpoint for the working 8A behavior.
 
 ## Remaining work
 The timer, artwork and export/reopen text features are
-planned for 8B. The AI assistance record will be linked
-here when completed.
+planned for 8B. 
+AI assistance and testing: [AI-Test.md](AI-Test.md).
