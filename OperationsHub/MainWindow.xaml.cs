@@ -8,24 +8,43 @@ namespace OperationsHub;
 // MainWindow is a class. Put fields and methods inside these outer braces.
 public partial class MainWindow : Window
 {
+    private readonly System.Collections.ObjectModel.ObservableCollection<string> items = new();
     public MainWindow()
     {
         InitializeComponent();
-        // TODO: connect your collection in the Data chapter.
+        lstItems.ItemsSource = items;
+    }
+
+    private void AddItem()
+    {
+        string entry = txtEntry.Text.Trim();
+
+        if (string.IsNullOrWhiteSpace(entry))
+        {
+            txtStatus.Text = "Enter a study task first.";
+            return;
+        }
+
+        items.Add(entry);
+        txtEntry.Clear();
+        txtStatus.Text = "Task added.";
     }
 
     private void Add_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (List chapter): Implement Add in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Add_Click: behavior still to build.";
+        AddItem();
     }
 
     private void Remove_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (List chapter): Implement Remove in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Remove_Click: behavior still to build.";
+        if (lstItems.SelectedItem is not string entry)
+        {
+            txtStatus.Text = "Select a task to remove.";
+            return;
+        }
+
+        items.Remove(entry);
+        txtStatus.Text = "Task removed.";
     }
 
     private void Timer_Click(object sender, RoutedEventArgs e)
