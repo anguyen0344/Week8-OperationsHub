@@ -15,12 +15,12 @@ implementation and collaboration evidence.
 | SEEK story planning | [Week8-SEEK-Completed.pdf](Week8-SEEK-Completed.pdf) |
 | Interface prototype | [prototype.png](prototype.png) |
 | Editable prototype | [Week8-8A-Prototype.pptx](Week8-8A-Prototype.pptx) |
-| Event plan, assumption and failure recovery | [whiteboard.jpg](whiteboard.jpg) |
+| Event plan, assumption and failure recovery | [Whiteboard8A.jpg](whiteboard.jpg) |
 | Adapted interface | [interface-shell.png](interface-shell.png) |
 | First working Add event | [add-task.png](add-task.png) |
 | Blank-input validation | [blank-input.png](blank-input.png) |
 | Remove selected task | [remove-task.png](remove-task.png) |
-| Peer observation recorded in Discord | [peer-discord.png](peer-discord.png) |
+| Peer observation recorded in Discord | [peer-discord.jpg](peer-discord.png) |
 | Learning notes and button recap | [lecture-notes.md](lecture-notes.md) |
 
 ## Implementation
