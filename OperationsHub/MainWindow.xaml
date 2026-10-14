@@ -23,7 +23,9 @@
    <Border Grid.Column="2" Padding="20" Background="#102A35" CornerRadius="14"><Grid><Grid.RowDefinitions><RowDefinition Height="100"/><RowDefinition Height="*"/></Grid.RowDefinitions>
     <!-- TODO: load your PNG/JPG into these named images in the Artwork chapter. -->
     <Image x:Name="imgArtwork" Stretch="Uniform"/>
-    <Grid Grid.Row="1" Margin="0,18,0,0"><StackPanel><TextBlock Text="FOCUS TIMER" Foreground="#F1C66F"/><TextBlock x:Name="txtTimer" Text="25:00" FontSize="48"/><WrapPanel><Button Content="Start / Pause" Click="Timer_Click"/><Button Content="Reset" Click="Reset_Click"/></WrapPanel><TextBlock Text="Study notes / reopened report" Margin="0,18,0,8"/><TextBox x:Name="txtDocument" Height="150" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/></StackPanel></Grid>
+                    <Grid Grid.Row="1" Margin="0,18,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Focus on one study task for 25 minutes. When the timer ends, take a short break." TextWrapping="Wrap" Foreground="#F1C66F"/><TextBlock x:Name="txtTimer" Text="25:00" FontSize="48"/><WrapPanel><Button Content="Start / Pause" Click="Timer_Click"/><Button Content="Reset" Click="Reset_Click"/></WrapPanel><TextBlock Text="Study notes / reopened report" Margin="0,18,0,8"/><TextBox x:Name="txtDocument" Height="150" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/></StackPanel></Grid>
    </Grid></Border>
   </Grid>
   <StackPanel Grid.Row="2"><WrapPanel>
