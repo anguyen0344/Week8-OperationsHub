@@ -167,8 +167,33 @@ public partial class MainWindow : Window
     }
     private void Image_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (Artwork chapter): Implement Image in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Image_Click: behavior still to build.";
+        var dialog = new Microsoft.Win32.OpenFileDialog
+        {
+            Filter = "Image files|*.png;*.jpg;*.jpeg"
+        };
+
+        if (dialog.ShowDialog() != true)
+        {
+            txtStatus.Text = "Image selection canceled.";
+            return;
+        }
+
+        try
+        {
+            var image = new System.Windows.Media.Imaging.BitmapImage();
+            image.BeginInit();
+            image.CacheOption =
+                System.Windows.Media.Imaging.BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(dialog.FileName, UriKind.Absolute);
+            image.EndInit();
+
+            imgArtwork.Source = image;
+            imgButton.Source = image;
+            txtStatus.Text = "Artwork loaded.";
+        }
+        catch (Exception ex)
+        {
+            txtStatus.Text = "Could not load the image: " + ex.Message;
+        }
     }
 }
