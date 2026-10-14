@@ -9,12 +9,36 @@ namespace OperationsHub;
 public partial class MainWindow : Window
 {
     private readonly System.Collections.ObjectModel.ObservableCollection<string> items = new();
+    private readonly System.Windows.Threading.DispatcherTimer timer = new();
+    private int remainingSeconds = 25 * 60;
     public MainWindow()
     {
         InitializeComponent();
         lstItems.ItemsSource = items;
+
+        timer.Interval = TimeSpan.FromSeconds(1);
+        timer.Tick += Timer_Tick;
+        Closed += (_, _) => timer.Stop();
+
+        UpdateTimer();
+    }
+    private void Timer_Tick(object? sender, EventArgs e)
+    {
+        remainingSeconds--;
+        UpdateTimer();
+
+        if (remainingSeconds <= 0)
+        {
+            timer.Stop();
+            txtStatus.Text = "Focus interval complete.";
+        }
     }
 
+    private void UpdateTimer()
+    {
+        txtTimer.Text = TimeSpan.FromSeconds(remainingSeconds)
+            .ToString(@"mm\:ss");
+    }
     private void AddItem()
     {
         string entry = txtEntry.Text.Trim();
@@ -49,18 +73,29 @@ public partial class MainWindow : Window
 
     private void Timer_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (Timer chapter): Implement Timer in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Timer_Click: behavior still to build.";
+        if (timer.IsEnabled)
+        {
+            timer.Stop();
+            txtStatus.Text = "Focus timer paused.";
+        }
+        else if (remainingSeconds > 0)
+        {
+            timer.Start();
+            txtStatus.Text = "Focus timer running.";
+        }
+        else
+        {
+            txtStatus.Text = "Reset the completed timer first.";
+        }
     }
 
     private void Reset_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (Timer chapter): Implement Reset in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Reset_Click: behavior still to build.";
+        timer.Stop();
+        remainingSeconds = 25 * 60;
+        UpdateTimer();
+        txtStatus.Text = "Timer reset to 25 minutes.";
     }
-
     private void Save_Click(object sender, RoutedEventArgs e)
     {
         // TODO (Text files chapter): Implement Save in the matching tutorial chapter.
