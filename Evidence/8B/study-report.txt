@@ -1,0 +1,9 @@
+CS110 Study Task Hub
+
+Study notes:
+Today I tested the focus timer.
+Next I will test exporting and reopening my study report.
+
+Study tasks:
+- CS 110 8A finished
+- CS 110 8B continuing

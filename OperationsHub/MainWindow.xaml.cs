@@ -96,20 +96,75 @@ public partial class MainWindow : Window
         UpdateTimer();
         txtStatus.Text = "Timer reset to 25 minutes.";
     }
+    private string BuildReport()
+    {
+        string report = "CS110 Study Task Hub\n\n";
+        report += "Study notes:\n" + txtDocument.Text + "\n\n";
+        report += "Study tasks:\n";
+
+        foreach (string item in items)
+        {
+            report += "- " + item + "\n";
+        }
+
+        return report;
+    }
+    private void SaveText(string text)
+    {
+        var dialog = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "Text files|*.txt",
+            FileName = "study-report.txt"
+        };
+
+        if (dialog.ShowDialog() != true)
+        {
+            txtStatus.Text = "Save canceled. Your text stays here.";
+            return;
+        }
+
+        try
+        {
+            System.IO.File.WriteAllText(dialog.FileName, text);
+            txtStatus.Text = "Saved: "
+                + System.IO.Path.GetFileName(dialog.FileName);
+        }
+        catch (Exception ex)
+        {
+            txtStatus.Text = "Could not save. Choose a writable folder: "
+                + ex.Message;
+        }
+    }
     private void Save_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (Text files chapter): Implement Save in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Save_Click: behavior still to build.";
+        SaveText(BuildReport());
     }
 
     private void Open_Click(object sender, RoutedEventArgs e)
     {
-        // TODO (Text files chapter): Implement Open in the matching tutorial chapter.
-        // Replace this placeholder with the handler shown in that chapter.
-        txtStatus.Text = "Open_Click: behavior still to build.";
-    }
+        var dialog = new Microsoft.Win32.OpenFileDialog
+        {
+            Filter = "Text files|*.txt"
+        };
 
+        if (dialog.ShowDialog() != true)
+        {
+            txtStatus.Text = "Open canceled. Your current text stays here.";
+            return;
+        }
+
+        try
+        {
+            txtDocument.Text =
+                System.IO.File.ReadAllText(dialog.FileName);
+
+            txtStatus.Text = "Text reopened. Review it before editing.";
+        }
+        catch (Exception ex)
+        {
+            txtStatus.Text = "Could not read the file: " + ex.Message;
+        }
+    }
     private void Image_Click(object sender, RoutedEventArgs e)
     {
         // TODO (Artwork chapter): Implement Image in the matching tutorial chapter.
