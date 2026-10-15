@@ -23,6 +23,7 @@ validation, recovery and collaboration evidence.
 | Peer feedback, revision and retest | [Revision](peer-revision.png), [Discord](peer-discord.png) |
 | Learning notes | [lecture-notes.md](lecture-notes.md) |
 | AI prediction, test and decision | [AI-Test.md](AI-Test.md) |
+| Test inputs, predictions, observations and next tests | [TestNotes.md](TestNotes.md) |
 
 ## Source code
 - [MainWindow.xaml](../../OperationsHub/MainWindow.xaml)
