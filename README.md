@@ -17,7 +17,7 @@ Action 8A and 8B records are kept in their own folders.
 | R4★ — Validate, recover and save text | [Blank input](Evidence/8A/blank-input.png), [Invalid image](Evidence/8B/invalid-image.png), [Recovery](Evidence/8B/image-recovery.png), [Report file](Evidence/8B/study-report.txt), [Export](Evidence/8B/exported-report.png), [Reopen](Evidence/8B/reopened-report.png), [Save cancellation](Evidence/8B/save-cancel.png) |
 | R5 — Keep both class records | [8A guide](Evidence/8A/README.md), [8B guide](Evidence/8B/README.md), [8A AI record](Evidence/8A/AI-Test.md), [8B AI record](Evidence/8B/AI-Test.md) |
 | R6 — Document a reusable pattern | This README and [PATTERN.md](PATTERN.md) |
-| R7★ — Receipt and tested GitHub link | [Week 8 receipt](Evidence/Final/receipt.html). Instructor access and Canvas submission are checked separately. |
+| R7★ — Receipt and tested GitHub link | [Week 8 receipt html](Evidence/Final/receipt.html), [Week 8 receipt pdf](Evidence/Final/receipt.pdf). Instructor access and Canvas submission are checked separately. |
 
 ### Three core functions
 
