@@ -30,6 +30,7 @@ if (string.IsNullOrWhiteSpace(entry))
 items.Add(entry);
 txtEntry.Clear();
 txtStatus.Text = "Task added.";
+```
 
 ## Why it is useful
 The early return prevents invalid data from reaching

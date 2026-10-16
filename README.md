@@ -4,6 +4,49 @@ Student: An Nguyen
 Selected route: Operations Hub
 Built with C# and WPF.
 
+## Week 8 Grading Guide
+
+Please use this guide to review the final app and evidence.
+Action 8A and 8B records are kept in their own folders.
+
+| Requirement | Evidence |
+| --- | --- |
+| R1 — Define the user and utility | [Context](Evidence/8A/Context.md), [AAA](Evidence/8A/Week8-AAA-Completed.pdf), [SEEK](Evidence/8A/Week8-SEEK-Completed.pdf) |
+| R2 — Prototype and map events | [Prototype](Evidence/8A/prototype.png), [8A whiteboard](Evidence/8A/Whiteboard8A.jpg), [First working action](Evidence/8A/add-task.png) |
+| R3★ — Build the selected utility | [Interface source](OperationsHub/MainWindow.xaml), [C# source](OperationsHub/MainWindow.xaml.cs), [Completed interface](Evidence/8B/completed-interface.png), [Test notes](Evidence/8B/TestNotes.md) |
+| R4★ — Validate, recover and save text | [Blank input](Evidence/8A/blank-input.png), [Invalid image](Evidence/8B/invalid-image.png), [Recovery](Evidence/8B/image-recovery.png), [Report file](Evidence/8B/study-report.txt), [Export](Evidence/8B/exported-report.png), [Reopen](Evidence/8B/reopened-report.png), [Save cancellation](Evidence/8B/save-cancel.png) |
+| R5 — Keep both class records | [8A guide](Evidence/8A/README.md), [8B guide](Evidence/8B/README.md), [8A AI record](Evidence/8A/AI-Test.md), [8B AI record](Evidence/8B/AI-Test.md) |
+| R6 — Document a reusable pattern | This README and [PATTERN.md](PATTERN.md) |
+| R7★ — Receipt and tested GitHub link | [Week 8 receipt](Evidence/Final/receipt.html). Instructor access and Canvas submission are checked separately. |
+
+### Three core functions
+
+| Function | Methods and data | Test evidence |
+| --- | --- | --- |
+| Add and remove tasks | Add_Click, AddItem, Remove_Click; ObservableCollection and ItemsSource | [Add](Evidence/8A/add-task.png), [Remove](Evidence/8A/remove-task.png), [Test notes](Evidence/8B/TestNotes.md) |
+| Start, pause and reset timer | Timer_Click, Timer_Tick, UpdateTimer, Reset_Click; DispatcherTimer and remainingSeconds | [Reset](Evidence/8B/timer-reset.png), [Timer completion](Evidence/8B/timer-zero.png), [AI test](Evidence/8B/AI-Test.md) |
+| Export and reopen text | Save_Click, BuildReport, SaveText, Open_Click | [Saved report](Evidence/8B/study-report.txt), [Reopened report](Evidence/8B/reopened-report.png) |
+
+### Class and collaboration evidence
+
+- [8A whiteboard](Evidence/8A/Whiteboard8A.jpg)
+- [8B whiteboard](Evidence/8B/whiteboard.jpg)
+- [Additional 8B whiteboards](Evidence/8B/all-white-board/)
+- [8A lecture notes](Evidence/8A/lecture-notes.md)
+- [8B lecture notes](Evidence/8B/lecture-notes.md)
+- [8A peer and Discord record](Evidence/8A/peer-discord.jpg)
+- [8B peer and Discord record](Evidence/8B/peer-discord.png)
+- [Whiteboard Discord record](Evidence/8B/discord-all-white-board.jpg)
+- [Peer revision](Evidence/8B/peer-revision.png)
+- [Image sources](Evidence/8B/image-sources.md)
+
+The peer requested a clearer explanation of the timer.
+I added the purpose of the 25-minute focus session.
+
+The peer reviewed the change and understood it.
+
+Git checkpoints are available in the repository history.
+Instructor acceptance of 8A and 8B is confirmed separately.
 ## User and purpose
 This app helps me organize my CS110 study tasks, focus on
 one task for 25 minutes, and save a readable study report.
